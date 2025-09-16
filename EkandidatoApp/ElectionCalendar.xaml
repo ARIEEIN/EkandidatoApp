@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EkandidatoApp.ElectionCalendar"
+             BackgroundColor="White">
+
+    <Grid x:Name="RootGrid" RowDefinitions="Auto,*,Auto" Padding="15">
+
+        <Grid Row="0" ColumnDefinitions="Auto,*,Auto" Padding="5">
+            <Image Source="menu_icon.png" HeightRequest="24" WidthRequest="24"/>
+            <Label Grid.Column="1"
+                   x:Name="MonthLabel"
+                   Text="Calendar"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextColor="#2E6A3E"/>
+            <Image Grid.Column="2" Source="calendar_icon.png" HeightRequest="24" WidthRequest="24"/>
+        </Grid>
+
+        <Border x:Name="CalendarContainer"
+                Grid.Row="1"
+                BackgroundColor="#80628F68"
+                Padding="10">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="20"/>
+            </Border.StrokeShape>
+
+            <VerticalStackLayout Spacing="10">
+                <ContentPresenter x:Name="CalendarContentPresenter" 
+                                  x:FieldModifier="Public"
+                                  VerticalOptions="Fill" 
+                                  HorizontalOptions="Fill" />
+
+                <Label Text="EVENTS"
+                       TextColor="#2E6A3E"
+                       FontAttributes="Bold"
+                       FontSize="16"/>
+
+                <ListView x:Name="EventsList"
+                          x:FieldModifier="Public"
+                          SelectionMode="None"
+                          HasUnevenRows="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Spacing="10" Padding="0,5">
+                                    <Ellipse WidthRequest="10" HeightRequest="10" Fill="{Binding DotColor}" VerticalOptions="Center" />
+                                    <Label Text="{Binding Name}" VerticalOptions="Center" TextColor="#2E6A3E" HorizontalOptions="FillAndExpand"/>
+                                    <Label Text="{Binding Time}" VerticalOptions="Center" TextColor="#2E6A3E" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
+        </Border>
+
+    </Grid>
+</ContentPage>

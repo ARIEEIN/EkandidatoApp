@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EkandidatoApp.PublicWall"
+             Title="Public Wall Opinion"
+             BackgroundColor="#E5F3E5">
+    <ScrollView>
+        <VerticalStackLayout Spacing="15" Padding="20">
+            <Frame BackgroundColor="White"
+                   CornerRadius="10"
+                   Padding="15"
+                   BorderColor="#E0E0E0"
+                   HasShadow="True">
+                <VerticalStackLayout Spacing="10">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <HorizontalStackLayout Grid.Column="0" Spacing="10" VerticalOptions="Center">
+                            <Frame CornerRadius="20"
+                                   BackgroundColor="#E5F3E5"
+                                   HeightRequest="40"
+                                   WidthRequest="40"
+                                   Padding="0"
+                                   IsClippedToBounds="True"
+                                   VerticalOptions="Center">
+                                <Label Text="SN"
+                                       TextColor="#2E6A3E"
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+                            </Frame>
+                            <VerticalStackLayout Spacing="2" VerticalOptions="Center">
+                                <Label Text="Student #0200012345"
+                                       TextColor="#2E6A3E"
+                                       FontSize="16"
+                                       FontAttributes="Bold"/>
+                                <Label Text="BS Computer Science"
+                                       TextColor="#999999"
+                                       FontSize="12"/>
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </Grid>
+                    <Label Text="The recent changes in the grading system should be re-evaluated. It feels less fair for project-based subjects."
+                           TextColor="#333333"
+                           FontSize="14"
+                           Margin="0,10,0,0"/>
+                    <Label Text="2h ago"
+                           TextColor="#999999"
+                           FontSize="10"
+                           HorizontalOptions="EndAndExpand"/>
+                    <Grid ColumnDefinitions="Auto,Auto,*,Auto" Margin="0,5,0,0">
+                        <HorizontalStackLayout Grid.Column="0" Spacing="5" VerticalOptions="Center">
+                            <Image Source="like_icon.png" HeightRequest="20">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding LikeCommand}"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label Text="1,400" TextColor="#666666" VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Grid.Column="1" Spacing="5" Margin="15,0,0,0" VerticalOptions="Center">
+                            <Image Source="unlike_icon.png" HeightRequest="20">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding UnlikeCommand}"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label Text="36" TextColor="#666666" VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Grid.Column="3" Spacing="5" HorizontalOptions="End" VerticalOptions="Center">
+                            <Image Source="share_icon.png" HeightRequest="20"/>
+                        </HorizontalStackLayout>
+                    </Grid>
+                    <Border StrokeShape="RoundRectangle 20"
+                            BackgroundColor="#F0F0F0"
+                            StrokeThickness="0"
+                            Padding="10"
+                            Margin="0,10,0,0">
+                        <Grid ColumnDefinitions="Auto,*">
+                            <Image Source="comment_icon.png" HeightRequest="18" WidthRequest="18" VerticalOptions="Center" Margin="0,0,5,0"/>
+                            <Label Text="Write a comment..."
+                                   TextColor="#999999"
+                                   FontSize="12"
+                                   Grid.Column="1"
+                                   VerticalOptions="Center"/>
+                        </Grid>
+                    </Border>
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

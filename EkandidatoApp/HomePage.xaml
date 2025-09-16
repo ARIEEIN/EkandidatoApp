@@ -1,0 +1,143 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="EkandidatoApp.HomePage" BackgroundColor="White">
+<Grid RowDefinitions="*,Auto">
+<ScrollView Grid.Row="0">
+<VerticalStackLayout Padding="0">
+    
+                <!-- Header -->
+                <Grid BackgroundColor="#E5F3E5" Padding="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <!-- Logo -->
+                    <Image Grid.Column="1" Source="ekandidato_logo1.png" HeightRequest="50" WidthRequest="150" Aspect="AspectFit" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <!-- Right Icons -->
+                    <HorizontalStackLayout Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" Spacing="10">
+                        <ImageButton Source="bell_icon.png" BackgroundColor="Transparent" HeightRequest="15" WidthRequest="15" Padding="6" BorderWidth="0" Aspect="AspectFit" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+                </Grid>
+    
+                <!-- Election Countdown -->
+                <Label Text="Election Countdown" FontSize="18" FontAttributes="Bold" TextColor="Black" Margin="20,20,0,5"/>
+                <Border Stroke="LightGray" StrokeShape="RoundRectangle 15" Padding="15" Margin="20,0">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="#5E936C" Offset="0.0" />
+                            <GradientStop Color="#F4EB16" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <VerticalStackLayout>
+                        <Label Text="Welcome to Ekandidato!" FontSize="14" TextColor="Black"/>
+                        <Label Text="You are now ready to participate in the Student Elections for S.Y. 2025-2026." FontSize="9" TextColor="Black" Margin="0,5,0,10" />
+                        
+                        <!-- Countdown Timer -->
+                        <Grid ColumnSpacing="10" HorizontalOptions="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <!-- Days -->
+                            <VerticalStackLayout Grid.Column="0" HorizontalOptions="Center">
+                                <Border BackgroundColor="DarkGreen" Padding="10" WidthRequest="60" HeightRequest="60">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="15" />
+                                       
+                                        <!-- Rounded corners -->
+                                    </Border.StrokeShape>
+                                    <Label Text="03" TextColor="White" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Border>
+                                <Label Text="days" FontSize="12" TextColor="White" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                            <!-- Hours -->
+                            <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center">
+                                <Border BackgroundColor="DarkGreen" Padding="10" WidthRequest="60" HeightRequest="60">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="15" />
+                                    </Border.StrokeShape>
+                                    <Label Text="2" TextColor="White" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Border>
+                                <Label Text="hours" FontSize="12" TextColor="White" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                            <!-- Minutes -->
+                            <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center">
+                                <Border BackgroundColor="DarkGreen" Padding="10" WidthRequest="60" HeightRequest="60">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="15" />
+                                    </Border.StrokeShape>
+                                    <Label Text="38" TextColor="White" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Border>
+                                <Label Text="mins" FontSize="12" TextColor="White" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                            <!-- Seconds -->
+                            <VerticalStackLayout Grid.Column="3" HorizontalOptions="Center">
+                                <Border BackgroundColor="DarkGreen" Padding="10" WidthRequest="60" HeightRequest="60">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="15" />
+                                    </Border.StrokeShape>
+                                    <Label Text="12" TextColor="White" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Border>
+                                <Label Text="sec" FontSize="12" TextColor="White" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                        <Label Text="You have 3 days left to vote. Let your voice be heard!" TextColor="Red" FontSize="9" HorizontalOptions="Center" Margin="0,10,0,0" />
+                        <Button Text="Vote Now" BackgroundColor="DarkGreen" TextColor="White" CornerRadius="10" WidthRequest="200" Margin="0,10,0,0" HorizontalOptions="Center">
+                            <Button.Shadow>
+                                <Shadow Brush="Black" Opacity="0.3" Radius="8" Offset="5,5"/>
+                            </Button.Shadow>
+                        </Button>
+                    </VerticalStackLayout>
+                </Border>
+    
+                <!-- Real-time Leading Candidate -->
+                <Label Text="Real-time Leading Candidate!" FontSize="18" FontAttributes="Bold" TextColor="Black" Margin="20,20,0,5"/>
+                <Border Stroke="LightGray" StrokeShape="RoundRectangle 15" Padding="15" Margin="20,0" BackgroundColor="#FFF0F0">
+                    <VerticalStackLayout>
+                        <Label Text="PRESIDENT" FontSize="14" FontAttributes="Bold" Margin="0,0,0,10" />
+                        <Label Text="Jung, Haein" FontAttributes="Bold"/>
+                        <ProgressBar Progress="0.8" ProgressColor="Green"/>
+                        <Label Text="800 Votes" FontSize="12"/>
+                        <Label Text="Kim, Mingyu" FontAttributes="Bold" Margin="0,10,0,0"/>
+                        <ProgressBar Progress="0.6" ProgressColor="LightGreen"/>
+                        <Label Text="600 Votes" FontSize="12"/>
+                        <Label Text="Vote count as of August 18, 2025 5:00PM" FontSize="10" TextColor="Gray" HorizontalOptions="Center" Margin="0,10,0,0"/>
+                    </VerticalStackLayout>
+                </Border>
+    
+                <!-- Live Candidate Debate -->
+                <Label Text="Live: Candidate Debate Streaming" FontSize="18" FontAttributes="Bold" TextColor="Black" Margin="20,20,0,5"/>
+                <Border Stroke="LightGray" StrokeShape="RoundRectangle 15" Padding="15" Margin="20,0" BackgroundColor="Gray" HeightRequest="200"></Border>
+            </VerticalStackLayout>
+        </ScrollView>
+    
+        <!-- Bottom Navigation Bar -->
+        <Grid Grid.Row="1" BackgroundColor="#E5F3E5" HeightRequest="60">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <VerticalStackLayout Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
+                <Image Source="home_icon.png" HeightRequest="25"/>
+                <Label Text="Home" FontSize="10" TextColor="Green"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
+                <Image Source="vote_icon.png" HeightRequest="25"/>
+                <Label Text="Vote" FontSize="10" TextColor="Green"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center">
+                <Image Source="candidates_icon.png" HeightRequest="25"/>
+                <Label Text="Candidates" FontSize="10" TextColor="Green"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center">
+                <Image Source="user_icon.png" HeightRequest="25"/>
+                <Label Text="Profile" FontSize="10" TextColor="Green"/>
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>
