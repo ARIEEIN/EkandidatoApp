@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace EkandidatoApp
 {
-    internal class @try
+    internal class ClassNiKimWitwew
     {
-       
     }
-
-    
 }
